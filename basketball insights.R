@@ -1,0 +1,34 @@
+#basketball insights
+myplot <- function(data, rows=1:10){
+  Data <- data[rows,,drop=F]
+  Data
+  matplot(t(Data), type="b", pch=15:18, col=c(1:4,6))
+  legend("bottomleft", inset=0.01, legend=Players, col=c(1:4,6), pch=15:18, horiz=F)
+  
+}
+
+
+#Salary
+myplot(Salary)
+myplot(Salary/Games)
+myplot(Salary/FieldGoals)
+
+#In-Game Metrics
+myplot(MinutesPlayed)
+myplot(Points)
+
+#In-Game Metrics normalized
+myplot(FieldGoals/Games)
+myplot(FieldGoals/FieldGoalAttempts)
+myplot(FieldGoalAttempts/Games)
+myplot(Points/Games)
+
+#Interesting Observations
+myplot(MinutesPlayed/Games)
+myplot(Games)
+
+#Time is valuable
+myplot(FieldGoals/MinutesPlayed)
+
+#Player style
+myplot(Points/FieldGoals)
